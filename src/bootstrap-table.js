@@ -1395,7 +1395,7 @@
             html.push('</div>',
                 '<div class="pull-' + this.options.paginationHAlign + ' pagination">',
                 '<ul class="pagination' + sprintf(' pagination-%s', this.options.iconSize) + '">',
-                '<li class="page-pre"><a href="javascript:void(0)">' + this.options.paginationPreText + '</a></li>');
+                '<li class="page-pre page-item"><a class="page-link" href="javascript:void(0)">' + this.options.paginationPreText + '</a></li>');
 
             if (this.totalPages < 5) {
                 from = 1;
@@ -1415,8 +1415,8 @@
 
             if (this.totalPages >= 6) {
                 if (this.options.pageNumber >= 3) {
-                    html.push('<li class="page-first' + (1 === this.options.pageNumber ? ' active' : '') + '">',
-                        '<a href="javascript:void(0)">', 1, '</a>',
+                    html.push('<li class="page-first page-item' + (1 === this.options.pageNumber ? ' active' : '') + '">',
+                        '<a class="page-link" href="javascript:void(0)">', 1, '</a>',
                         '</li>');
 
                     from++;
@@ -1452,8 +1452,8 @@
             }
 
             for (i = from; i <= to; i++) {
-                html.push('<li class="page-number' + (i === this.options.pageNumber ? ' active' : '') + '">',
-                    '<a href="javascript:void(0)">', i, '</a>',
+                html.push('<li class="page-number page-item' + (i === this.options.pageNumber ? ' active' : '') + '">',
+                    '<a class="page-link" href="javascript:void(0)">', i, '</a>',
                     '</li>');
             }
 
@@ -1467,14 +1467,14 @@
 
             if (this.totalPages >= 6) {
                 if (this.options.pageNumber <= (this.totalPages - 3)) {
-                    html.push('<li class="page-last' + (this.totalPages === this.options.pageNumber ? ' active' : '') + '">',
-                        '<a href="javascript:void(0)">', this.totalPages, '</a>',
+                    html.push('<li class="page-last page-item' + (this.totalPages === this.options.pageNumber ? ' active' : '') + '">',
+                        '<a class="page-link" href="javascript:void(0)">', this.totalPages, '</a>',
                         '</li>');
                 }
             }
 
             html.push(
-                '<li class="page-next"><a href="javascript:void(0)">' + this.options.paginationNextText + '</a></li>',
+                '<li class="page-next page-item"><a class="page-link" href="javascript:void(0)">' + this.options.paginationNextText + '</a></li>',
                 '</ul>',
                 '</div>');
         }
